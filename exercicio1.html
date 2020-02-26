@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="css/style.css" rel = stylesheet>
+    <title>Formulário de compras</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Página de compras online</a>
+        </nav>   
+    </header>
+    <main class="container">
+        <form id = "formularioCompra" class = "row d-flex justify-content-center mt-5">
+            <div class = "col-lg-6">
+                <header class = "bg-dark text-light p-2">
+                    Preencha este formulário e receba em casa o seu medicamento!
+                </header>
+                <div class="p-2">
+                    <div class="form-group">
+                        <label for="CRMMedico">CRM do Medico:</label>
+                        <input class="form-control" type="number" required="required" id="CRMMedico" name="CRMMedico" placeholder="Digite o CRM do seu médico"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="nomeMedico">Nome do Médico:</label>
+                        <input class="form-control" type="text" required="required" id="nomeMedico" name="nomeMedico" maxlength="50" placeholder="Digite o nome do seu médico"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="dataReceita">Data da receita:</label>
+                        <input class="form-control" type="date" required="required" id="dataReceita" name="dataReceita" placeholder="Digite a data da sua receita"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="quantidadeCaixas">Quantidade de caixas:</label>
+                        <input class="form-control" type="number" required="required" id="quantidadeCaixas" name="quantidadeCaixas" placeholder="Digite a quantidade de caixas desejada"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="nomePaciente">Nome:</label>
+                        <input class="form-control" type="text" required="required" id="nomePaciente" name="nomePaciente" maxlength="50" placeholder="Digite o seu nome"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="CPFPaciente">CPF:</label>
+                        <input class="form-control" type="number" required="required" id="CPFPaciente" name="CPFPaciente" placeholder="Digite o seu CPF"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="dataNascimento">Data de nascimento:</label>
+                        <input class="form-control" type="date" required="required" id="dataNascimento" name="dataNascimento" placeholder="Digite a sua data de nascimento"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="genero">Gênero:</label>
+                        <select class="form-control" type="" required="required" id="genero" name="genero">
+                            <option value="" disabled selected>Selecione uma opção</option>
+                            <option value="feminino">Feminino</option>
+                            <option value="masculino">Masculino</option>
+                            <option value="outro">Prefiro não responder</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="tipoEnvio">Tipo de envio:</label>
+
+                        <div>
+                            <div class="display-flex justify-content-space-between row col-5">
+                                <label for="tipoEnvio">Anexar arquivo:</label>
+                                <input type="radio" class="form-control" required="required" id="tipoEnvio" name="tipoEnvio" value="anexarArquivo"></input>
+                            </div>
+                            <div class="display-flex justify-content-space-between row col-5">
+                                <label for="tipoEnvio">WhatsApp:</label>
+                                <input type="radio" class="form-control" required="required" id="tipoEnvio" name="tipoEnvio" value="whatsapp"></input>
+                            </div>
+                            <div class="display-flex justify-content-space-between row col-5">
+                                <label for="tipoEnvio">Email:</label>
+                                <input type="radio" class="form-control" required="required" id="tipoEnvio" name="tipoEnvio" value="email"></input>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <button type="button" class="btn btn-dark" id="botao" name="botao">Enviar</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </main>
+
+    <div id= "compra" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Pedido enviado com sucesso!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Em até 3 dias úteis você receberá um email sobre a aprovação do seu pedido.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script src="js/script.js"></script>
+    </footer>
+</body>
+</html>
